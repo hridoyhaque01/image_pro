@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import CollapseSection from "../components/CollapseSection";
+import GridImageGallery from "../components/GridImageGallery";
 
 const MainLayout = () => {
   const items = [
@@ -44,6 +45,7 @@ const MainLayout = () => {
     >
       <Outlet></Outlet>
       <CollapseSection items={items}></CollapseSection>
+      <GridImageGallery></GridImageGallery>
     </section>
   );
 };
