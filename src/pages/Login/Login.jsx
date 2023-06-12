@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ToastContainer, toast } from "react-toastify";
@@ -8,7 +8,9 @@ const Login = () => {
   // changing the webpage title dynamically
   document.title = `${import.meta.env.VITE_ApplicationName} | Login`;
 
-  const { loginUserEmail, loading } = useContext(AuthContext);
+  const { loginUserEmail, verifyEmail, user, loading } =
+    useContext(AuthContext);
+  const [checkedStatus, setCheckedStatus] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state?.from?.pathname || "/";
@@ -24,6 +26,7 @@ const Login = () => {
       progress: undefined,
       theme: "light",
     });
+  console.log(user);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -37,11 +40,18 @@ const Login = () => {
         form.reset();
         navigate(from, { replace: true });
       })
+      .then(() => {
+        if (checkedStatus) {
+          verifyEmail(email);
+        }
+      })
       .catch((error) => {
         errorMessageToast("Invalid e-mail");
         console.log(error?.message);
       });
   };
+
+  console.log(checkedStatus);
 
   return (
     <div className="flex flex-col items-center justify-center text-center py-2">
@@ -67,6 +77,10 @@ const Login = () => {
           />
           <div className="flex items-center justify-start gap-2">
             <input
+              defaultChecked={checkedStatus}
+              onClick={() => {
+                setCheckedStatus(true);
+              }}
               type="checkbox"
               className="checkbox checkbox-sm rounded-none"
             />

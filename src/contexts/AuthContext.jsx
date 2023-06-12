@@ -4,10 +4,14 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   updateProfile,
+  updateEmail,
+  deleteUser,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  sendPasswordResetEmail,
+  sendEmailVerification,
 } from "firebase/auth";
 import { firebaseApp } from "../firebase/firebase.config";
 
@@ -24,6 +28,16 @@ const AuthProvider = ({ children }) => {
     return updateProfile(auth.currentUser, profile);
   };
 
+  const updateEmailAddress = (newEmail) => {
+    updateEmail(auth.currentUser, newEmail)
+      .then(() => {
+        console.log("Email Updated");
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
+
   const providerLogin = (provider) => {
     setLoading(true);
     return signInWithPopup(auth, provider);
@@ -32,6 +46,34 @@ const AuthProvider = ({ children }) => {
   const loginUserEmail = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const resetUserPassword = (email) => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        console.log("password reset email sent");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
+
+  const deletCurrentUser = () => {
+    deleteUser(user)
+      .then(() => {
+        console.log("User deleted");
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
+
+  const verifyEmail = () => {
+    sendEmailVerification(auth.currentUser).then(() => {
+      console.log("verification email sent");
+    });
   };
 
   const createNewUserEmail = (email, password) => {
@@ -90,8 +132,12 @@ const AuthProvider = ({ children }) => {
     user,
     setUser,
     updateUser,
+    verifyEmail,
+    deletCurrentUser,
+    updateEmailAddress,
     createNewUserEmail,
     loginUserEmail,
+    resetUserPassword,
     providerLogin,
     logout,
     loading,
