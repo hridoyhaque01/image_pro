@@ -1,8 +1,10 @@
+import Banner from "../../components/HomepageComponents/Banner";
+
 const Home = () => {
   return (
-    <div>
-      <p>home, sweet home!</p>
-    </div>
+    <>
+      <Banner widthClass="max-w-[74rem] mx-auto"></Banner>
+    </>
   );
 };
 

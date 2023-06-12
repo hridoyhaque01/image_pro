@@ -1,12 +1,16 @@
 import { RouterProvider } from "react-router-dom";
+import ThemeProvider from "./firebase/ThemeProvider/ThemeContext";
 import { routes } from "./routes/Router";
 
 function App() {
   const Router = routes;
+
   return (
-    <div>
-      <RouterProvider router={Router}></RouterProvider>
-    </div>
+    <ThemeProvider>
+      <div>
+        <RouterProvider router={Router}></RouterProvider>
+      </div>
+    </ThemeProvider>
   );
 }
 
