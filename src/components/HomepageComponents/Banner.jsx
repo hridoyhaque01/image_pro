@@ -4,7 +4,10 @@ import { banner } from "../../utils/getImages";
 
 function Banner({ widthClass }) {
   return (
-    <section className="bg-heroLightBg dark:bg-heroDarkBg bg-no-repeat bg-cover bg-right-top pt-32 md:pt-36 md:pb-20 lg:pt-48 lg:pb-32 px-6">
+    <section
+      className="bg-heroLightBg dark:bg-heroDarkBg bg-no-repeat bg-cover bg-right-top pt-32 md:pt-36
+     lg:pt-48 pb-10 md:pb-20 lg:pb-32 px-6"
+    >
       <div className={widthClass}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-7">
           <div className="flex flex-col items-center sm:items-start gap-6 text-center sm:text-left">

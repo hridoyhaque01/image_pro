@@ -1,5 +1,5 @@
 import { RouterProvider } from "react-router-dom";
-import ThemeProvider from "./firebase/ThemeProvider/ThemeContext";
+import ThemeProvider from "./contexts/ThemeProvider/ThemeContext";
 import { routes } from "./routes/Router";
 
 function App() {

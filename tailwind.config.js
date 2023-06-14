@@ -8,6 +8,8 @@ export default {
   darkMode: "class",
   theme: {
     colors: {
+      transparent: "transparent",
+
       primaryColor: "#5454C0",
       secondaryColor: "#FF862F",
       successColor: "#2CC672",
@@ -41,10 +43,14 @@ export default {
       blueLight: "#CDD2F0",
 
       slateDark: "#555568",
+      slateHigh: "#ECEEFF",
       slateSemi: "#A0A1BB",
       slateMid: "#D5D5E0",
       slateLow: "#EEEEF4",
       slateLight: "rgba(85, 85, 104,0.25)",
+
+      navbarBg: "rgba(255,255,255,0.42)",
+      darkNavbarBg: "rgb(19 22 24 / 42%)",
     },
 
     backgroundImage: {
@@ -55,9 +61,7 @@ export default {
         "linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, #E7E8FF 100%)",
       blueGradient: "linear-gradient(to bottom, #6C43E8 0%, #3D1E9A 100%)",
       darkGradient: "linear-gradient(to bottom, #151930 0%, #0F0F14 100%)",
-
       // images
-
       heroDarkBg: "url('./Assets/Images/hero-dark.png')",
       heroLightBg: "url('./Assets/Images/hero-light.png')",
     },

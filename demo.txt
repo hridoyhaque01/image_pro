@@ -1,0 +1,24 @@
+<SwiperSlide key={id}>
+                  <div className="relative flex flex-col justify-center text-center px-4 py-10 border border-blueLight after:content-[''] after:absolute after:-right-1 after:top-0 after:h-full after:w-full after:rounded-2xl after:border-transparent after:hover:border-primaryColor after:border-r-8 rounded-2xl after:duration-200">
+                    <div className="flex items-center justify-center gap-1 mb-8">
+                      <img src={icon} alt="" className="max-w-[64px]" />
+                    </div>
+                    <p className="text-base leading-6 text-slateDark dark:text-white">
+                      {text}
+                    </p>
+                    <div className="border border-fadeHigh dark:border-navyDark mt-10 mb-8"></div>
+                    <div className="">
+                      <img
+                        src={avatar}
+                        alt=""
+                        className="max-w-[60px] mx-auto"
+                      />
+                    </div>
+                    <h2 className="text-xl text-blackText  font-bold dark:text-white mt-4 mb-1">
+                      {name}
+                    </h2>
+                    <p className="text-sm text-slateDark dark:text-slateSemi">
+                      {address}
+                    </p>
+                  </div>
+                </SwiperSlide>
