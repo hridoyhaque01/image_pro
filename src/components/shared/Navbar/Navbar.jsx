@@ -21,8 +21,10 @@ const Navbar = ({ fixedTop }) => {
           ? "md:dark:bg-darkNavbarBg md:bg-navbarBg md:backdrop-blur md:shadow-sm"
           : ""
       } flex flex-wrap md:justify-center z-[70] w-full ${
-        fixedTop ? "fixed top-0 left-0" : "md:shadow-sm"
-      } text-sm px-4 py-5  dark:bg-gray-800 duration-300`}
+        fixedTop
+          ? "fixed top-0 left-0"
+          : "md:shadow-sm bg-white dark:bg-blackHigh"
+      } text-sm px-4 py-5 duration-300`}
     >
       <nav className="max-w-[74rem] w-full mx-auto  flex items-center justify-between ">
         <div>
