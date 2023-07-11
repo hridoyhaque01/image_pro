@@ -12,8 +12,7 @@ const MainLayout = () => {
       className={`font-dmSans ${isDarkMode ? "dark" : "light"}`}
       // className={`min-h-screen flex flex-col justify-start md:justify-between bg-mainBg bg-no-repeat bg-top`}
     >
-      {/* <Navbar></Navbar> */}
-      <Navbar></Navbar>
+      <Navbar fixedTop={true}></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>
     </section>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { logoDark } from "../../../utils/getImages";
+import { logo } from "../../../Assets/getImages";
 
 function Footer() {
   return (
@@ -9,7 +9,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-6">
           <div className="max-w-[276px]">
             <div>
-              <img src={logoDark} alt="" />
+              <img src={logo} alt="" />
             </div>
             <p className="text-base lg:text-xl leading-6 mt-6 md:mt-10 mb-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu

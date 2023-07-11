@@ -1,5 +1,5 @@
 import React from "react";
-import { reviewStar, star } from "../../utils/getImages";
+import { reviewStar, star } from "../../Assets/getImages";
 
 function Trustpilot() {
   return (

@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { generateImage } from "../../utils/getImages";
+import { generateImage } from "../../Assets/getImages";
 
 function GenerateImages() {
   return (
-    <section className=" pt-10 md:pt-20 lg:pt-32">
+    <section className="pt-10 md:pt-20 lg:pt-32">
       <div className="grid grid-cols-1 md:grid-cols-2  gap-7">
         <div className="order-2 md:order-1">
           <p className="text-blueMid">Image to Images</p>

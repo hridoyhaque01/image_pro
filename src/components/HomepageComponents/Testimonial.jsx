@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { avatar1, avatar2, avatar3, quote } from "../../utils/getImages";
+import { avatar1, avatar2, avatar3, quote } from "../../Assets/getImages";
 
 function Testimonial() {
   const testimonialData = [

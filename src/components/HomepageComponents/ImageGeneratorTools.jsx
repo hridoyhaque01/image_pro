@@ -1,12 +1,36 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import getData from "../../utils/getData.json";
-
+import { tool1, tool2, tool3, tool4 } from "../../Assets/getImages";
 // Import Swiper styles
 import "swiper/css";
 
 function ImageGeneratorTools() {
-  const { generatorTools } = getData || {};
+  const generatorTools = [
+    {
+      id: 1,
+      imageUrl: tool1,
+      title: "Built for speed",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
+    },
+    {
+      id: 2,
+      imageUrl: tool2,
+      title: "10+ AI models",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
+    },
+    {
+      id: 3,
+      imageUrl: tool3,
+      title: "Downloads required",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
+    },
+    {
+      id: 4,
+      imageUrl: tool4,
+      title: "Works for all use cases",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
+    },
+  ];
 
   return (
     <section className="pt-10 md:pt-20 lg:pt-32">

@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 // import PrivateRoute from "./PrivateRouter";
 import MainLayout from "../layouts/MainLayout";
+import SecondaryLayout from "../layouts/SecondaryLayout";
+import Generate from "../pages/Generate/Generate";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Pricing from "../pages/Pricing/Pricing";
@@ -16,10 +18,6 @@ export const routes = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/home",
-        element: <Home></Home>,
-      },
-      {
         path: "/login",
         element: <Login></Login>,
       },
@@ -30,6 +28,16 @@ export const routes = createBrowserRouter([
       {
         path: "/pricing",
         element: <Pricing></Pricing>,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <SecondaryLayout></SecondaryLayout>,
+    children: [
+      {
+        path: "/generate",
+        element: <Generate></Generate>,
       },
     ],
   },
