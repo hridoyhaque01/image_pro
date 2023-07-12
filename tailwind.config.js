@@ -9,6 +9,7 @@ export default {
   theme: {
     colors: {
       transparent: "transparent",
+      "black-70": "rgba(0, 0, 0, 0.70)",
 
       primaryColor: "#5454C0",
       secondaryColor: "#FF862F",
@@ -37,7 +38,9 @@ export default {
       disabled: "#C2C2CF",
       blackbg: "#121224",
       navyDark: "#282546",
+      navyMid: "#212035",
       navyLight: "#393672",
+      navyLow: "#2B2949",
 
       blueMid: "#828ED8",
       blueLight: "#CDD2F0",
@@ -68,6 +71,12 @@ export default {
 
     fontFamily: {
       dmSans: ["DM Sans", "sans-serif"],
+    },
+
+    extend: {
+      boxShadow: {
+        15: "0px 9px 40px 0px rgba(0, 0, 0, 0.15)",
+      },
     },
   },
   plugins: [require("preline/plugin")],

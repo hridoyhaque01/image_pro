@@ -1,10 +1,44 @@
 import React from "react";
+import { logo } from "../../../Assets/getImages";
 
 function ChatBot() {
   return (
     <div className="fixed left-0 right-0 bottom-10 px-6 z-[60]">
-      <div className="max-w-[75rem] mx-auto flex justify-end">
-        <button type="button" className="p-3 bg-black rounded-full">
+      <div className="max-w-[75rem] mx-auto flex flex-col">
+        <div className="flex flex-col w-[23rem] max-w-[23rem] bg-white border border-fadeHigh rounded-md ml-auto">
+          <div className="w-full flex  items-center justify-between gap-6 p-3 bg-white">
+            <div></div>
+            <div>
+              <img src={logo} alt="" className="w-36 lg:w-auto" />
+            </div>
+            <button type="button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="29"
+                height="28"
+                viewBox="0 0 29 28"
+                fill="none"
+              >
+                <path
+                  d="M16.1506 14L22.3258 7.82479C22.7819 7.36979 22.7819 6.63019 22.3258 6.17519C21.8696 5.71903 21.1323 5.71903 20.6761 6.17519L14.5009 12.3503L8.32578 6.17519C7.86961 5.71903 7.13228 5.71903 6.67611 6.17519C6.21994 6.63019 6.21994 7.36979 6.67611 7.82479L12.8513 14L6.67611 20.1752C6.21994 20.6302 6.21994 21.3698 6.67611 21.8248C6.90361 22.0523 7.20228 22.1667 7.50094 22.1667C7.79961 22.1667 8.09828 22.0523 8.32578 21.8248L14.5009 15.6497L20.6761 21.8248C20.9036 22.0523 21.2023 22.1667 21.5009 22.1667C21.7996 22.1667 22.0983 22.0523 22.3258 21.8248C22.7819 21.3698 22.7819 20.6302 22.3258 20.1752L16.1506 14Z"
+                  fill="#555568"
+                />
+              </svg>
+            </button>
+          </div>
+          <div className="h-[23rem] bg-fadeMid p-4"></div>
+          <div>
+            <form
+              action=""
+              className="w-full flex  items-center justify-between gap-6 p-3 bg-white"
+            ></form>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          className="p-3 bg-black rounded-full max-w-max ml-auto"
+        >
           <svg
             viewBox="0 0 60 60"
             fill="none"

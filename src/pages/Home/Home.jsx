@@ -1,10 +1,10 @@
-import Banner from "../../components/HomepageComponents/Banner";
-import Faq from "../../components/HomepageComponents/Faq";
-import GenerateImages from "../../components/HomepageComponents/GenerateImages";
-import ImageGallery from "../../components/HomepageComponents/ImageGallery";
-import ImageGeneratorTools from "../../components/HomepageComponents/ImageGeneratorTools";
-import Testimonial from "../../components/HomepageComponents/Testimonial";
-import Trustpilot from "../../components/HomepageComponents/Trustpilot";
+import Banner from "../../components/homeComponents/Banner";
+import Faq from "../../components/homeComponents/Faq";
+import GenerateImages from "../../components/homeComponents/GenerateImages";
+import ImageGallery from "../../components/homeComponents/ImageGallery";
+import ImageGeneratorTools from "../../components/homeComponents/ImageGeneratorTools";
+import Testimonial from "../../components/homeComponents/Testimonial";
+import Trustpilot from "../../components/homeComponents/Trustpilot";
 import ChatBot from "../../components/shared/chatBox/ChatBot";
 
 const Home = () => {

@@ -1,32 +1,45 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Pricing = () => {
-  const [isMonthly, setIsMonthly] = useState(true);
+  const [pricing, setPricing] = useState("monthly");
+  const navigate = useNavigate();
+
+  const freePirce = pricing === "monthly" ? "00" : "00";
+  const starterPirce = pricing === "monthly" ? "9.99" : "19.99";
+  const premiumPirce = pricing === "monthly" ? "14.99" : "37.99";
+  const businessPirce = pricing === "monthly" ? "29.99" : "49.99";
+
+  const handleNavigateWithBilling = (selectedPackage) => {
+    navigate("/billing", {
+      state: { pricing, packageDetails: selectedPackage },
+    });
+  };
 
   return (
-    <section className="bg-white px-6  sm:px-16 md:px-24 lg:px-6 pt-40 pb-28 dark:bg-blackbg text-gray-600 body-font overflow-hidden">
+    <section className="bg-white px-6  sm:px-16 md:px-24 lg:px-6 pt-32 md:pt-36 lg:pt-40  pb-10 dark:bg-blackbg text-gray-600 body-font overflow-hidden">
       <div className="max-w-[74rem] mx-auto">
-        <div className="flex flex-col justify-center text-center w-full mb-20">
-          <h1 className="text-blackText dark:text-white text-2xl md:text-4xl  font-bold">
+        <div className="flex flex-col justify-center text-center w-full ">
+          <h1 className="text-blackText dark:text-white text-2xl md:text-4xl font-bold">
             Pricing
           </h1>
           <p className="text-slateDark dark:text-white text-sm md:text-base mt-2 mb-4 md:mt-4 md:mb-10">
             Annually you get 20% off, which is 2 months free
           </p>
-          <div className="flex items-center border border-fadeHigh dark:border-slateDark rounded-full p-3 max-w-max mx-auto text-xl font-bold bg-fadeMid dark:bg-blackHigh text-blackText dark:text-white">
+          <div className="flex items-center border border-fadeHigh dark:border-slateDark rounded-full p-3 max-w-max mx-auto text-xl font-bold bg-fadeMid dark:bg-blackHigh text-blackText dark:text-white mb-10">
             <button
               className={`${
-                !isMonthly ? "bg-primaryColor text-white" : ""
+                pricing === "annually" ? "bg-primaryColor text-white" : ""
               }  px-6 py-4 rounded-full whitespace-nowrap`}
-              onClick={() => setIsMonthly(false)}
+              onClick={() => setPricing("annually")}
             >
               Annually
             </button>
             <button
               className={`${
-                isMonthly ? "bg-primaryColor text-white" : ""
+                pricing === "monthly" ? "bg-primaryColor text-white" : ""
               }  px-6 py-4 rounded-full whitespace-nowrap`}
-              onClick={() => setIsMonthly(true)}
+              onClick={() => setPricing("monthly")}
             >
               Monthly
             </button>
@@ -41,7 +54,8 @@ const Pricing = () => {
               </h2>
               <div className="border border-slateHigh dark:border-blackText group-hover:border-blueLight dark:group-hover:border-slateDark my-5"></div>
               <h1 className="text-4xl text-blackText dark:text-white font-bold relative pl-4">
-                <span className="text-xl absolute top-0 left-0">$</span> 00 USD
+                <span className="text-xl absolute top-0 left-0">$</span>{" "}
+                {freePirce} USD
               </h1>
               <p className="text-slateDark dark:text-slateMid text-sm">
                 per person, per month
@@ -151,7 +165,15 @@ const Pricing = () => {
                 </li>
               </ul>
 
-              <button className="text-white bg-primaryColor py-4 w-full outline-none rounded-lg">
+              <button
+                className="text-white bg-primaryColor py-4 w-full outline-none rounded-lg"
+                onClick={() =>
+                  handleNavigateWithBilling({
+                    price: freePirce,
+                    packageName: "free",
+                  })
+                }
+              >
                 Get Started
               </button>
             </div>
@@ -164,8 +186,8 @@ const Pricing = () => {
               </h2>
               <div className="border border-slateHigh dark:border-blackText group-hover:border-blueLight dark:group-hover:border-slateDark my-5"></div>
               <h1 className="text-4xl text-blackText dark:text-white font-bold relative pl-4">
-                <span className="text-xl absolute top-0 left-0">$</span> 9.99
-                USD
+                <span className="text-xl absolute top-0 left-0">$</span>{" "}
+                {starterPirce} USD
               </h1>
               <p className="text-slateDark dark:text-slateMid text-sm">
                 per person, per month
@@ -275,7 +297,15 @@ const Pricing = () => {
                 </li>
               </ul>
 
-              <button className="text-white bg-primaryColor py-4 w-full outline-none rounded-lg">
+              <button
+                className="text-white bg-primaryColor py-4 w-full outline-none rounded-lg"
+                onClick={() =>
+                  handleNavigateWithBilling({
+                    price: starterPirce,
+                    packageName: "sarter",
+                  })
+                }
+              >
                 Get Started
               </button>
             </div>
@@ -291,8 +321,8 @@ const Pricing = () => {
               </h2>
               <div className="border border-blueLight dark:border-slateDark my-5"></div>
               <h1 className="text-4xl text-blackText dark:text-white font-bold relative pl-4">
-                <span className="text-xl absolute top-0 left-0">$</span> 14.99
-                USD
+                <span className="text-xl absolute top-0 left-0">$</span>{" "}
+                {premiumPirce} USD
               </h1>
               <p className="text-slateDark dark:text-slateMid text-sm">
                 per person, per month
@@ -402,7 +432,15 @@ const Pricing = () => {
                 </li>
               </ul>
 
-              <button className="text-white bg-primaryColor py-4 w-full outline-none rounded-lg">
+              <button
+                className="text-white bg-primaryColor py-4 w-full outline-none rounded-lg"
+                onClick={() =>
+                  handleNavigateWithBilling({
+                    price: premiumPirce,
+                    packageName: "premium",
+                  })
+                }
+              >
                 Get Started
               </button>
             </div>
@@ -416,7 +454,7 @@ const Pricing = () => {
               <div className="border border-slateHigh dark:border-blackText group-hover:border-blueLight dark:group-hover:border-slateDark my-5"></div>
               <h1 className="text-4xl text-blackText dark:text-white font-bold relative pl-4">
                 <span className="text-xl absolute top-0 left-0">$</span>
-                29.99 USD
+                {businessPirce} USD
               </h1>
               <p className="text-slateDark dark:text-slateMid text-sm">
                 per person, per month
@@ -526,7 +564,15 @@ const Pricing = () => {
                 </li>
               </ul>
 
-              <button className="text-white bg-primaryColor py-4 w-full outline-none rounded-lg">
+              <button
+                className="text-white bg-primaryColor py-4 w-full outline-none rounded-lg"
+                onClick={() =>
+                  handleNavigateWithBilling({
+                    price: businessPirce,
+                    packageName: "business",
+                  })
+                }
+              >
                 Get Started
               </button>
             </div>

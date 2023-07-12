@@ -1,24 +1,25 @@
-<SwiperSlide key={id}>
-                  <div className="relative flex flex-col justify-center text-center px-4 py-10 border border-blueLight after:content-[''] after:absolute after:-right-1 after:top-0 after:h-full after:w-full after:rounded-2xl after:border-transparent after:hover:border-primaryColor after:border-r-8 rounded-2xl after:duration-200">
-                    <div className="flex items-center justify-center gap-1 mb-8">
-                      <img src={icon} alt="" className="max-w-[64px]" />
-                    </div>
-                    <p className="text-base leading-6 text-slateDark dark:text-white">
-                      {text}
-                    </p>
-                    <div className="border border-fadeHigh dark:border-navyDark mt-10 mb-8"></div>
-                    <div className="">
-                      <img
-                        src={avatar}
-                        alt=""
-                        className="max-w-[60px] mx-auto"
-                      />
-                    </div>
-                    <h2 className="text-xl text-blackText  font-bold dark:text-white mt-4 mb-1">
-                      {name}
-                    </h2>
-                    <p className="text-sm text-slateDark dark:text-slateSemi">
-                      {address}
-                    </p>
-                  </div>
-                </SwiperSlide>
+ {/* <div className="w-full h-full flex flex-col items-center justify-center">
+          <div className="text-center">
+            <div className="">
+              <img
+                className="w-48 mx-auto"
+                //   style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);"
+                src="https://s3-alpha-sig.figma.com/img/21f3/c289/3c7c72a3844bff6780290e5c66444a92?Expires=1690156800&amp;Signature=GMpWC8v-CbUmjDRP2udKS-5KBqJ3jQbhxunE4itPH5xEuD3NyfW0PzF5MjOePZ2HoaxG1DhfnscW3ZZVqpGyQQLGDSsOfmkmNRl4rmp114ZmDUj5AfBp-fhGcBnZSeTEhHm4CnrcMOubP50nV61kBwRBioVrw2yQMUr8DGWCYvc3lOgwWHVZnG6wNHfXehUaHzc1FpyWFn~qEvMRLmKH8LzcPDLT8PPe~z82ZVwq3NZPxGJE-SyYumRDenN6zPv0YhL6gjbaxegfGX7hF84A4hXPsQSDBwC~M0po1Ssl7sbzEaUE1xBZ4eiIcSE9Gvx9SDzRW9CeETmSiRXAcI95Rg__&amp;Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+              />
+            </div>
+            <h2 className="text-5xl font-bold text-secondaryColor">
+              Congratulation
+            </h2>
+            <p className="text-slateDark dark:text-slateSemi my-4">
+              Premium Package Purchas successfully
+            </p>
+          </div>
+          <div className="w-full">
+            <button
+              className="w-full flex  items-center justify-center p-6 text-xl font-bold bg-primaryColor text-white leading-none rounded-lg"
+              data-hs-overlay="#payment-modal"
+            >
+              Continue
+            </button>
+          </div>
+        </div> */}

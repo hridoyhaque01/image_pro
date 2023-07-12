@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { Link } from "react-router-dom";
 import {
   image1,
   image2,
@@ -65,9 +66,10 @@ function ImageGallery() {
           </Masonry>
         </ResponsiveMasonry>
         <div className="flex justify-center mt-20">
-          <button
+          <Link
             className="p-6 border border-blueMid whitespace-nowrap rounded-lg text-xl font-bold text-blueMid flex items-center gap-4 max-w-max"
             type="button"
+            to="/discover"
           >
             <span>Load More</span>
             <svg
@@ -114,7 +116,7 @@ function ImageGallery() {
                 fill="#5454C0"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </section>
