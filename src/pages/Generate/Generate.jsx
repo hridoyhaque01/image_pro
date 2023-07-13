@@ -421,19 +421,42 @@ function Generate() {
                 No Creations yet!
               </h2>
             </div>
-            <div>
-              <div className="px-6 py-3 flex items-center justify-between text-blackText dark:text-white border-b border-fadeHigh dark:border-blackReg bg-fadeSemi dark:bg-black">
+            <div className="">
+              <div className="px-6 py-3 flex items-center justify-between text-blackText dark:text-white border-b border-fadeHigh dark:border-blackReg bg-fadeSemi dark:bg-black rounded-t-2xl">
                 <p className=" ">You’re viewing older messages</p>
                 <div className="relative">
                   <select
                     className="w-full bg-transparent flex items-center text-darkSemi pr-3 text-sm font-bold text-blackText dark:text-white outline-none"
                     name="product1"
                   >
-                    <option value="Jump To Present">Jump To Present</option>
-                    <option value="Jump To old">Jump To old</option>
+                    <option
+                      value="Jump To Present"
+                      className="dark:text-blackText"
+                    >
+                      Jump To Present
+                    </option>
+                    <option value="Jump To old" className="dark:text-blackText">
+                      Jump To old
+                    </option>
                   </select>
                 </div>
               </div>
+              <form
+                action="#"
+                className="bg-fadeMid p-6 rounded-b-2xl flex items-center justify-between gap-6"
+              >
+                <textarea
+                  name=""
+                  className="resize-none h-6 max-h-10 w-full  outline-none bg-transparent"
+                  placeholder="message"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="py-3 px-6 bg-primaryColor rounded-lg text-white"
+                >
+                  Generate
+                </button>
+              </form>
             </div>
           </div>
         </div>
