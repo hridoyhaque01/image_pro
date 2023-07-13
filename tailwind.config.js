@@ -23,6 +23,7 @@ export default {
       blackHigh: "#171727",
       blackSemi: "#616161",
       blackMid: "#757575",
+      blackReg: "#20232C",
       blackLow: "#9E9E9E",
       blackLight: "rgba(189 ,189 ,189,0.25)",
 
@@ -62,6 +63,8 @@ export default {
       pinkGradient: "linear-gradient(to bottom, #C91876 0%, #EF46A0 100%)",
       grayGradient:
         "linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, #E7E8FF 100%)",
+      blackGradient:
+        "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%)",
       blueGradient: "linear-gradient(to bottom, #6C43E8 0%, #3D1E9A 100%)",
       darkGradient: "linear-gradient(to bottom, #151930 0%, #0F0F14 100%)",
       // images

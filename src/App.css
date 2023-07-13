@@ -47,6 +47,8 @@
   fill: white;
 }
 
-.options::-webkit-scrollbar {
+.options::-webkit-scrollbar,
+.generate-option::-webkit-scrollbar,
+.chat::-webkit-scrollbar {
   width: 0;
 }

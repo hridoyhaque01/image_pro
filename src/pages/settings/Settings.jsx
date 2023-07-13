@@ -24,7 +24,7 @@ function Settings() {
   };
 
   return (
-    <section className="bg-white px-6  sm:px-16 md:px-24 lg:px-6 pt-28 md:pt-32 lg:pt-36  pb-10 dark:bg-blackbg text-gray-600 body-font overflow-hidden">
+    <section className="bg-white px-6 sm:px-16 md:px-24 lg:px-6 pt-28 md:pt-32 lg:pt-36  pb-10 dark:bg-blackbg text-gray-600 body-font overflow-hidden min-h-screen">
       <div className="max-w-[49rem] mx-auto">
         <div className="flex flex-col justify-center w-full bg-slateHigh dark:bg-black rounded-3xl py-14 px-4 sm:px-7 md:px-10">
           <h1 className="text-blackText dark:text-white text-2xl md:text-4xl  font-bold">

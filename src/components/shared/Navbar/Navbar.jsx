@@ -62,8 +62,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link className="" to="/">
-                Project
+              <Link className="" to="/contact-us">
+                Contact us
               </Link>
             </li>
 
@@ -181,8 +181,8 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="" to="/">
-                    Project
+                  <Link className="" to="/contact-us">
+                    Contact us
                   </Link>
                 </li>
                 <li>
@@ -197,7 +197,7 @@ const Navbar = () => {
                     <img src={user} alt="" className="w-12 h-12 rounded-full" />
                   </div>
                   <div>
-                    <h2 className="text-sm font-dmSans  text-blackText">
+                    <h2 className="text-sm font-dmSans  text-blackText dark:text-white">
                       Mahmud Saimon
                     </h2>
                     <p className="text-xs text-slateDark">user@website.com</p>

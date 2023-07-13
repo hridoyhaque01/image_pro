@@ -1,17 +1,80 @@
-import React from "react";
-import { logo } from "../../../Assets/getImages";
+import React, { useEffect, useRef, useState } from "react";
+import { logo, user } from "../../../Assets/getImages";
+import Message from "./Message";
 
 function ChatBot() {
+  const [isOpentChat, setIsOpenChat] = useState(false);
+  const formRef = useRef();
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      sender: "user",
+      message: "hi",
+      timestamp: 1689208910,
+      imageUrl: user,
+    },
+    {
+      id: 2,
+      sender: "bot",
+      message: "hello",
+      timestamp: 1689207509,
+    },
+    {
+      id: 3,
+      sender: "user",
+      message: "How are you?",
+      timestamp: 1689207509,
+      imageUrl: user,
+    },
+    {
+      id: 4,
+      sender: "bot",
+      message: "Good Noon Sir. Fine. How do you do?",
+      timestamp: 1626185471,
+    },
+    {
+      id: 5,
+      sender: "sender",
+      message: "How can I help you Sir?",
+      timestamp: 1644822085,
+    },
+  ]);
+
+  const messagesRef = useRef();
+
+  useEffect(() => {
+    messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+  }, [messages.length]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const message = form.message.value;
+    const newMessage = {
+      id: messages?.length + 1,
+      sender: "user",
+      message,
+      imageUrl: user,
+      timestamp: Date.now(),
+    };
+    setMessages((prevMessages) => [...prevMessages, newMessage]);
+    formRef.current.reset();
+  };
+
   return (
-    <div className="fixed left-0 right-0 bottom-10 px-6 z-[60]">
+    <div className="fixed left-0 right-0 bottom-10 px-6 z-[70]">
       <div className="max-w-[75rem] mx-auto flex flex-col">
-        <div className="flex flex-col w-[23rem] max-w-[23rem] bg-white border border-fadeHigh rounded-md ml-auto">
-          <div className="w-full flex  items-center justify-between gap-6 p-3 bg-white">
+        <div
+          className={`flex flex-col w-[23rem] max-w-[23rem] border border-fadeHigh dark:border-blackText rounded-3xl ml-auto mb-1 overflow-hidden ${
+            isOpentChat ? "scale-100" : "scale-0"
+          } origin-bottom-right duration-300`}
+        >
+          <div className="w-full flex  items-center justify-between gap-6 p-3 bg-white dark:bg-blackHigh">
             <div></div>
             <div>
               <img src={logo} alt="" className="w-36 lg:w-auto" />
             </div>
-            <button type="button">
+            <button type="button" onClick={() => setIsOpenChat(false)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="29"
@@ -26,18 +89,80 @@ function ChatBot() {
               </svg>
             </button>
           </div>
-          <div className="h-[23rem] bg-fadeMid p-4"></div>
-          <div>
+          <div
+            className="h-[23rem] w-full bg-fadeMid p-4 dark:bg-blackText overflow-auto flex items-end flex-wrap gap-4 chat"
+            ref={messagesRef}
+          >
+            <div className="flex flex-col gap-4 overflow-auto">
+              {messages?.map((message) => (
+                <Message message={message}></Message>
+              ))}
+            </div>
+          </div>
+          <div className="bg-white p-4  dark:bg-blackHigh">
             <form
               action=""
-              className="w-full flex  items-center justify-between gap-6 p-3 bg-white"
-            ></form>
+              className="w-full flex  items-center justify-between gap-3 py-2 px-4 bg-fadeMid dark:bg-blackText rounded-lg"
+              onSubmit={handleSubmit}
+              ref={formRef}
+            >
+              <div>
+                <input
+                  type="file"
+                  id="file"
+                  className="absolute opacity-0 invisible"
+                />
+                <label htmlFor="file">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M17.565 14.546C17.31 14.546 17.0551 14.449 16.8601 14.255C16.4681 13.866 16.466 13.232 16.856 12.841L18.824 10.863C19.584 10.111 20 9.104 20 8.024C20 6.944 19.5829 5.93301 18.8259 5.17601C17.2599 3.60801 14.7079 3.61001 13.1389 5.17601L11.1731 7.15202C10.7841 7.54302 10.152 7.54602 9.75905 7.15602C9.36705 6.76702 9.3649 6.13302 9.7549 5.74202L11.7229 3.76402C14.0719 1.41502 17.893 1.41501 20.24 3.76201C21.375 4.89601 22 6.41 22 8.024C22 9.643 21.3741 11.154 20.2361 12.28L18.2739 14.253C18.0789 14.448 17.822 14.546 17.565 14.546ZM12.2739 20.24L14.2529 18.272C14.6449 17.882 14.6471 17.249 14.2571 16.858C13.8671 16.467 13.235 16.464 12.843 16.854L10.8631 18.824C9.29405 20.392 6.74404 20.39 5.17604 18.824C3.60904 17.256 3.60909 14.706 5.17409 13.14L7.15309 11.172C7.54509 10.782 7.547 10.149 7.157 9.75801C6.767 9.36701 6.13493 9.36401 5.74293 9.75401L3.76295 11.724C1.41495 14.071 1.41495 17.89 3.76295 20.238C4.93795 21.412 6.47999 21.998 8.02199 21.998C9.56199 21.999 11.1029 21.413 12.2739 20.24ZM9.70705 15.707L15.7329 9.68202C16.1239 9.29102 16.1239 8.65802 15.7329 8.26802C15.3419 7.87802 14.7101 7.87802 14.3191 8.26802L8.29298 14.293C7.90198 14.684 7.90198 15.317 8.29298 15.707C8.48798 15.902 8.74401 16 9.00001 16C9.25601 16 9.51204 15.902 9.70705 15.707Z"
+                      className="fill-slateSemi dark:fill-white"
+                    />
+                  </svg>
+                </label>
+              </div>
+              <div className="h-4 w-1 bg-slateSemi dark:bg-white"></div>
+              <div className="w-full">
+                <input
+                  type="text"
+                  className="w-full outline-none bg-transparent placeholder:text-slateDark dark:placeholder:text-white dark:text-white"
+                  placeholder="Type Message..."
+                  name="message"
+                />
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  className="p-2 bg-primaryColor rounded-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M15.3717 2.55248L4.44413 5.28416C1.8333 5.93666 1.85913 9.65666 4.47913 10.2733L7.87838 11.0733C7.96254 11.0933 8.05171 11.0683 8.11255 11.0067L12.0609 7.05832C12.3026 6.81665 12.7024 6.81665 12.9441 7.05832C13.1858 7.29999 13.1858 7.69999 12.9441 7.94165L8.9941 11.8916C8.93327 11.9525 8.90757 12.0416 8.92757 12.1258L9.72672 15.5217C10.3434 18.1417 14.0632 18.1675 14.7157 15.5567L17.4475 4.62915C17.76 3.37415 16.6242 2.23914 15.3717 2.55248Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
 
         <button
           type="button"
           className="p-3 bg-black rounded-full max-w-max ml-auto"
+          onClick={() => setIsOpenChat((prev) => !prev)}
         >
           <svg
             viewBox="0 0 60 60"

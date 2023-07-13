@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import SecondaryLayout from "../layouts/SecondaryLayout";
 import Billing from "../pages/billing/Billing";
+import Contact from "../pages/contact/Contact";
 import Discover from "../pages/discover/Discover";
 import Generate from "../pages/generate/Generate";
 import Home from "../pages/home/Home";
@@ -53,6 +54,10 @@ export const routes = createBrowserRouter([
       {
         path: "/settings",
         element: <Settings></Settings>,
+      },
+      {
+        path: "/contact-us",
+        element: <Contact></Contact>,
       },
     ],
   },

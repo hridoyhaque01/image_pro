@@ -5,13 +5,12 @@ import ImageGallery from "../../components/homeComponents/ImageGallery";
 import ImageGeneratorTools from "../../components/homeComponents/ImageGeneratorTools";
 import Testimonial from "../../components/homeComponents/Testimonial";
 import Trustpilot from "../../components/homeComponents/Trustpilot";
-import ChatBot from "../../components/shared/chatBox/ChatBot";
 
 const Home = () => {
   return (
     <div className="bg-white dark:bg-blackbg">
       <Banner widthClass="max-w-[74rem] mx-auto"></Banner>
-      <ChatBot></ChatBot>
+      {/* <ChatBot></ChatBot> */}
       <div className="px-6">
         <div className="max-w-[74rem] mx-auto">
           <ImageGeneratorTools></ImageGeneratorTools>
