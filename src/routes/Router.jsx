@@ -7,9 +7,8 @@ import Contact from "../pages/contact/Contact";
 import Discover from "../pages/discover/Discover";
 import Generate from "../pages/generate/Generate";
 import Home from "../pages/home/Home";
-import Login from "../pages/login/Login";
 import Pricing from "../pages/pricing/Pricing";
-import Register from "../pages/register/Register";
+import UpdateProfile from "../pages/profile/UpdateProfile";
 import Settings from "../pages/settings/Settings";
 
 export const routes = createBrowserRouter([
@@ -25,14 +24,14 @@ export const routes = createBrowserRouter([
         path: "/discover",
         element: <Discover></Discover>,
       },
-      {
-        path: "/login",
-        element: <Login></Login>,
-      },
-      {
-        path: "/register",
-        element: <Register></Register>,
-      },
+      // {
+      //   path: "/login",
+      //   element: <Login></Login>,
+      // },
+      // {
+      //   path: "/register",
+      //   element: <Register></Register>,
+      // },
     ],
   },
   {
@@ -58,6 +57,10 @@ export const routes = createBrowserRouter([
       {
         path: "/contact-us",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/update-profile",
+        element: <UpdateProfile></UpdateProfile>,
       },
     ],
   },
